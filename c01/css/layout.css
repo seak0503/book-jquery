@@ -1,0 +1,88 @@
+p {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴPro W3", "メイリオ", Meiryo, "MS　Pゴシック", sans-serif;
+}
+.wrapper {
+	margin: 0 auto 80px auto;
+	width: 90%;
+}
+h1 {
+	margin: 1em 0 1em 0;
+	text-align: center;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.table th {
+	background-color: #eee;
+}
+.table th,
+.table td
+{
+	padding: 8px;
+	border: 1px solid #ddd;
+}
+.checkbox_group,
+.radio_group {
+	float: left;
+	margin: 1em 0;
+	width: 50%;
+}
+.submit_group {
+	clear: both;
+}
+
+/* header */
+.wrapper-header {
+	border-top: solid 6px #000;
+}
+.header {
+	margin: 16px auto;
+	width: 90%;
+}
+.header h1 {
+	margin: 0 0 30px 0;
+	width: 406px;
+	height: 79px;
+	background: url(../images/logo.png) no-repeat;
+	text-indent: -9999px;
+}
+
+/* category */
+.wrapper-category {
+	border-top: solid 5px #75b4c4;
+	background: #8ac2d0;
+}
+.category {
+	margin: 0 auto 2em auto;
+	width: 90%;
+}
+.category > div {
+	padding: 30px 0 10px 0;
+	text-align: right;
+	font-size: 2em;
+	line-height: 1em;
+	color: #fff;
+}
+
+/* footer */
+.wrapper-footer {
+	background: #000;
+}
+.footer {
+	margin: 0 auto;
+	width: 90%;
+}
+.footer p {
+	padding: 30px 4.1666666%;/* 4.1666666%（40px/960px） */
+	text-align: right;
+	color: #fff;
+}

@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* 基本設定クリア */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, input, textarea, legend, article, aside, footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	color: #000;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+.clear {
+	overflow: hidden;
+	zoom: 1;
+}
+/* 基本のレイアウト */
+body {
+	background: #fff;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+.wrapper-headerinfo {
+	background: #000;
+}
+.headerinfo {
+	margin: 0 auto;
+	max-width: 960px;
+}
+.headerinfo-contents {
+	padding: 20px 4.1666666%;/* 4.1666666%（40px/960px） */
+}
+.wrapper-header {
+	border-top: solid 6px #000;
+}
+.header {
+	margin: 0 auto;
+	max-width: 960px;
+}
+.wrapper-nav-global {
+	background: #fff;
+	border-bottom: solid 2px #000;
+}
+.nav-global {
+	margin: 0 auto;
+	max-width: 960px;
+}
+.wrapper-category {
+	border-top: solid 5px #75b4c4;
+	background: #8ac2d0;
+}
+.category {
+	margin: 0 auto;
+	max-width: 960px;
+}
+.wrapper-main {
+	background: #ededed;
+}
+.main {
+	margin: 0 auto;
+	max-width: 960px;
+	background: #fff;
+}
+.main-contents {
+	padding: 30px 4.1666666%;/* 4.1666666%（40px/960px） */
+}
+.wrapper-footer {
+	background: #000;
+}
+.footer {
+	margin: 0 auto;
+	max-width: 960px;
+}
+/* headerinfo */
+.headerinfo-contents img {
+	float: left;
+	margin: 0 2.2727272% 10px 0;/* 2.2727272%（20px/880px）*/
+}
+.headerinfo p {
+	padding: 20px 0 0 0;
+	font-size: 0.8em;
+	color: #fff;
+}
+/* header */
+.header .nav-info {
+	position: relative;
+	height: 45px;
+}
+.header .nav-info a {
+	display: block;
+	padding: 5px 0 0 0;
+	width: 90px;
+	height: 40px;
+	background: #000;
+	border-radius: 0 0 45px 45px;
+	color: #fff;
+	text-align: center;
+	font-size: 0.8em;
+	position: absolute;
+	right: 4.1666666%;/* 4.1666666%（40px/960px） */
+}
+.header .nav-info a:hover {
+	color: #ddd;
+}
+.header .nav-info a:active {
+	color: #bbb;
+}
+.header h1 {
+	margin: 0 0 30px 4.1666666%;/* 4.1666666%（40px/960px） */
+	width: 406px;
+	height: 79px;
+	background: url(../images/logo.png) no-repeat;
+	text-indent: -9999px;
+}
+/* nav-global */
+.nav-global li {
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+.nav-global li a {
+	display: block;
+	padding: 15px 0;
+	border-right: solid 1px #ddd;
+	color: #000;
+}
+.nav-global li:last-child a {
+	border-right: none;
+}
+.nav-global li a:hover {
+	padding: 15px 0 10px 0;
+	border-bottom: solid 5px #8ac2d0;
+}
+.nav-global li a:active{
+	border-bottom: solid 5px #75b4c4;
+}
+/* category */
+.category p {
+	padding: 30px 4.1666666% 10px 0;/* 4.1666666%（40px/960px） */
+	text-align: right;
+	font-size: 2em;
+	line-height: 1em;
+	color: #fff;
+}
+/* main-contents */
+.main-contents h1 {
+	margin: 0 0 1em 0;
+	padding: 15px 0 15px 10px;
+	border-left: solid 12px #8ac2d0;
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #75b4c4;
+}
+.main-contents h2 {
+	margin: 2em 0 1em 0;
+	border-bottom: solid 1px #8ac2d0;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #75b4c4;
+}
+.main-contents h3 {
+	margin: 0 0 0.5em 0;
+	font-weight: bold;
+	color: #75b4c4;
+}
+.main-contents p {
+	margin: 0 0 1em 0;
+	line-height: 1.8em;
+}
+.main-contents p.lead {
+	margin: 0 0 1em 0;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+/* footer */
+.footer p {
+	padding: 30px 4.1666666%;/* 4.1666666%（40px/960px） */
+	text-align: right;
+	color: #fff;
+}
+
+/**
+ * RESPONSIVE: スマートフォン向けウィンドウ幅600px以下
+ */
+@media screen and (max-width:600px) {
+	/* header */
+	.header .nav-info {
+		height: 30px;
+	}
+	.header .nav-info a {
+		padding: 5px 0 0 0;
+		height: 25px;
+		border-radius: 0 0 5px 5px;
+		font-size: 0.8em;
+	}
+	.header h1 {
+		width: 300px;
+		height: 53px;
+		background: url(../images/logo-300.png) no-repeat;
+	}
+	/* nav-global */
+	.nav-global li {
+		float: none;
+		width: 100%;
+		text-align: left;
+	}
+	.nav-global li a {
+		padding: 10px 0 10px 15px;
+		border-right: none;
+		border-top: solid 1px #dedede;
+	}
+	.nav-global li a:hover {
+		padding: 10px 0 10px 10px;
+		border-bottom: none;
+		border-left: solid 5px #8ac2d0;
+	}
+	/* category */
+	.category p {
+		padding: 20px 4.1666666% 8px 0;/* 4.1666666%（40px/960px） */
+		font-size: 1.5em;
+	}
+	/* main-contents */
+	.main-contents h1 {
+		padding: 5px 0 5px 10px;
+		border-left: solid 10px #8ac2d0;
+		font-size: 1.5em;
+	}
+	.main-contents p.lead {
+		font-size: 1em;
+	}
+}
