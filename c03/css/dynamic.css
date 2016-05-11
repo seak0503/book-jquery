@@ -1,0 +1,36 @@
+/**
+ * 03-01　アコーディオン
+ */
+/* アコーディオンのデフォルト（閉） */
+.accordion > li {
+  cursor: pointer;
+  margin: 0 0 5px 0;
+  padding: 25px 10px;
+  border-radius: 5px;
+  background-color: #ededed;
+  background-image: url(../images/arrow-down.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+.accordion > li:hover {
+  background-color: #ddd;
+}
+.accordion > li > h2 {
+  font-weight: normal;
+}
+.accordion > li .content {
+  display: none;
+}
+/* アコーディオンが開いたときのスタイル  */
+.accordion > li.expanded {
+  background-color: #ddd;
+  background-image: url(../images/arrow-up.png);
+}
+.accordion > li.expanded > h2 {
+  font-weight: bold;
+}
+.accordion > li.expanded .content {
+  margin: 10px 0 0 0;
+  padding: 10px 0 0 0;
+  border-top: solid 1px #fff;
+}
