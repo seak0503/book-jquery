@@ -34,3 +34,85 @@
   padding: 10px 0 0 0;
   border-top: solid 1px #fff;
 }
+
+/**
+ * 03-02　ドロップダウンメニュー
+ */
+.wrapper-menubar {
+  height: 45px;
+  position: relative;
+}
+.menubar {
+  position: absolute;
+  right: 4.1666666%;
+
+}
+.dropdown-menu {
+  width: 150px;
+}
+/* ボタンのスタイル */
+.dropdown-menu > a {
+  display: block;
+  padding: 5px 0 5px 40px;
+  background-color: #000;
+  background-image: url(../images/arrow-dropdown1.png);
+  background-position: 25px 50%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+.dropdown-menu > a:hover {
+  background-image: url(../images/arrow-dropdown2.png);
+  color: #ddd;
+}
+.dropdown-menu > a:active {
+  background-image: url(../images/arrow-dropdown3.png);
+  color: #a2a2a2;
+}
+/* クリッックして開くメニューのスタイル */
+.dropdown-menu > .items {
+  display: none;
+  margin: 2px 0 0 0;
+  width: 150px;
+  position: absolute;
+}
+.dropdown-menu > .items li a {
+  display: block;
+  padding: 5px 0;
+  background: #a2a2a2;
+  color: #fff;
+  font-size: 0.9em;
+  text-align: center;
+}
+.dropdown-menu > .items li:first-child a {
+  border-radius: 5px 5px 0 0;
+}
+.dropdown-menu > .items li:last-child a {
+  border-radius: 0 0 5px 5px;
+}
+.dropdown-menu > .items li a:hover {
+  background: #bbb;
+}
+.dropdown-menu > .items li a:active {
+  background: #757575;
+}
+
+/**
+ * RESPONSIVE: スマートフォン向けウィンドウ幅600px以下
+ */
+@media screen and (max-width:600px) {
+  .wrapper-menubar {
+    height: 30px;
+  }
+  .menubar {
+    top: 0;
+  }
+  .dropdown-menu > a {
+    border-radius: 0 0 5px 5px;
+    font-size: 0.8em;
+  }
+  .dropdown-menu > .items li a {
+    font-size: 0.8em;
+  }
+}
