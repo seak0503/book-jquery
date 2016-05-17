@@ -48,3 +48,20 @@ $(function() {
       }
   });
 });
+
+/**
+ * 03-03 CSSを操作するアニメーション
+ */
+$(function() {
+  $('.first')
+  .on('mouseenter', '.btn-action', function(event) {
+    event.preventDefault();
+    $(this).find('img')
+    .addClass('animate');
+  })
+  .on('mouseleave', '.btn-action', function(event) {
+    event.preventDefault();
+    $(this).find('img')
+    .removeClass('animate');
+  });
+});
