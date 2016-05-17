@@ -65,3 +65,21 @@ $(function() {
     .removeClass('animate');
   });
 });
+
+/**
+ * 03-04 連続アニメーション
+ */
+$(function() {
+  $('.second')
+  .on('mouseenter', '.btn-action', function(event) {
+    event.preventDefault();
+    $(this).find('img')
+    .animate({'opacity':0.5}, 300)
+    .animate({'opacity':1}, 500);
+  })
+  .on('mouseleave', '.btn-action', function(event) {
+    event.preventDefault();
+    $(this).find('img')
+    .animate({'opacity':1}, 300);
+  });
+});
