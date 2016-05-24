@@ -209,6 +209,16 @@
 /**
  * 03-07 Ajaxの基礎
  */
+/* 画像とテキストのブロック */
+#ajax-list > li {
+	overflow: hidden;
+	margin: 0 0 20px 0;
+}
+#ajax-list > li img {
+	margin: 0 10px 5px 0;
+	float: left;
+	border-radius: 5px;
+}
 /* moreボタン */
 .btn {
 	text-align: right;
