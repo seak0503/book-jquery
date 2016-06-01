@@ -1,0 +1,42 @@
+/**
+ * 04-01　モーダルウィンドウ
+ */
+.modalwin {
+  position: fixed;
+  width: 600px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 #000;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.modalwin h1 {
+  background: #ededed;
+  padding: 20px;
+  border-radius: 5px 5px 0 0;
+  font-size: 1.2em;
+}
+.modalwin-contents {
+  padding: 20px;
+}
+.modalwin-contents img {
+  margin: 0 10px 10px 0;
+  float: left;
+}
+.modalwin-contents p {
+  margin: 0 0 1em 0;
+  line-height: 1.8em;
+}
+
+/**
+ * RESPONSIVE: スマートフォン向けウィンドウ幅600px以下
+ */
+@media screen and (max-width:600px) {
+  .modalwin {
+    width: 90%;
+  }
+}

@@ -1,44 +1,30 @@
 /**
  * 04-01　モーダルウィンドウ
  */
-$(function(){
-	function showModal() {
-		var $shade = $('<div></div>');
-		$shade
-		.attr('id', 'shade')
-		.on('click', hideModal);
-		
+$(function() {
+	//モーダルウィンドウを開く
+	function showModal(event) {
+		event.preventDefault();
+
 		var $modalWin = $('#modalwin');
-		var posX = ($(window).width() - $modalWin.outerWidth()) / 2;
-		var posY = ($(window).height() - $modalWin.outerHeight()) / 2;
-		
+		var $window = $(window);
+		var posX = ($window.width() - $modalWin.outerWidth()) / 2;
+		var posY = ($window.height() - $modalWin.outerHeight()) / 2;
+
 		$modalWin
-		.before($shade)
 		.css({left: posX, top: posY})
 		.removeClass('hide')
-		.addClass('show');
-		
-		$modalWin
-		.on('click', '.modal-close', function() {
-			hideModal();
-		})
+		.addClass('show')
 		.on('click', 'button', function() {
-			/*
-			 some function
-			 */
 			hideModal();
-		})
-		
+		});
 	};
-	
+	//モーダルウィンドウを閉じる
 	function hideModal() {
-		$('#shade').remove();
 		$('#modalwin')
 		.removeClass('show')
 		.addClass('hide');
 	};
 
 	$('.show-modal').on('click', showModal);
-	
-	
 });
