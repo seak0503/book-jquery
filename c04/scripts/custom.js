@@ -35,3 +35,20 @@ $(function() {
 
 	$('.show-modal').on('click', showModal);
 });
+
+/**
+ * 04-02　ウィンドウ上端でグローバルナビゲーションを固定する
+ */
+$(function () {
+	$(window).on('scroll', function () {
+		var scrollValue = $(this).scrollTop();
+		console.log(scrollValue);
+		$('.fixedmenu')
+		.trigger('customScroll', {posY: scrollValue});
+	});
+
+	$('.fixedmenu')
+	.on('customScroll', function (event, object) {
+		console.log('customScroll %s', object.posY)
+	});
+});
