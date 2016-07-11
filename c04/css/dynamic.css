@@ -69,3 +69,13 @@ a.modal-close:active {
     width: 90%;
   }
 }
+
+/**
+ * 04-02　ウィンドウ上端でグローバルナビゲーションを固定する
+ */
+.fixed {
+  position: fixed;
+}
+.wrapper-nav-global.fixed {
+  width: 100%;
+}
