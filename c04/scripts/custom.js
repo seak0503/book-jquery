@@ -111,9 +111,14 @@ $(function () {
 
 		var $this = $(this);
 		var linkTo = $this.attr('href');
-		var $target = $(linkTo);
-		var offset = $target.data('offsettop');
-		var pos = $target.offset().top - offset;
+		var $target;
+		var offset = 0;
+		var pos = 0;
+		if (linkTo != '#top') {
+			$target = $(linkTo);
+			offset = $target.data('offsettop');
+			pos = $target.offset().top - offset;
+		}
 		$('html,body').animate({scrollTop: pos}, 400);
 	});
 });

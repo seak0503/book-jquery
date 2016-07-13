@@ -49,7 +49,6 @@ a.modal-close:hover {
 a.modal-close:active {
   background-position: -80px 0;
 }
-
 /* シェード */
 #shade {
   position: fixed;
@@ -78,4 +77,35 @@ a.modal-close:active {
 }
 .wrapper-nav-global.fixed {
   width: 100%;
+}
+
+/**
+ * 04-05　スクロールしてページトップに戻る
+ */
+/* ページトップに戻るボタンのスタイル */
+.pageup {
+  margin: 0 auto;
+  max-width: 960px;
+  height: 30px;
+  background: #fff;
+  position: relative;
+}
+.pageup a {
+  display: block;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px 30px 0 0;
+  background-color: #000;
+  background-image: url(../images/arrow-1.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 4.1666666%;
+  bottom: 0;
+}
+.pageup a:hover {
+  background-image: url(../images/arrow-2.png);
+}
+.pageup a:active {
+  background-image: url(../images/arrow-3.png);
 }
