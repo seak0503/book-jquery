@@ -101,3 +101,19 @@ $(function () {
 		}
 	});
 });
+
+/**
+ * 04-04　スクロールしてページ内のリンク先まで移動する
+ */
+$(function () {
+	$('a.scroll-link').on('click', function (event) {
+		event.preventDefault();
+
+		var $this = $(this);
+		var linkTo = $this.attr('href');
+		var $target = $(linkTo);
+		var offset = $target.data('offsettop');
+		var pos = $target.offset().top - offset;
+		$('html,body').animate({scrollTop: pos}, 400);
+	});
+});
