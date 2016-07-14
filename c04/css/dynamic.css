@@ -109,3 +109,12 @@ a.modal-close:active {
 .pageup a:active {
   background-image: url(../images/arrow-3.png);
 }
+
+/**
+ * 04-06　スクロール位置に合わせてリンクをハイライトする
+ */
+/* サイドバーがハイライトしたときのスタイル */
+.sidebar ul li a.selected {
+  background: url(../images/sidebar-bg4.png) no-repeat 95% 50% #e38d8d;
+  color: #fff;
+}

@@ -104,6 +104,7 @@ $(function () {
 
 /**
  * 04-04　スクロールしてページ内のリンク先まで移動する
+ * 04-05　スクロールしてページトップに戻る
  */
 $(function () {
 	$('a.scroll-link').on('click', function (event) {
@@ -120,5 +121,28 @@ $(function () {
 			pos = $target.offset().top - offset;
 		}
 		$('html,body').animate({scrollTop: pos}, 400);
+	});
+});
+
+/**
+ * 04-06　スクロール位置に合わせてリンクをハイライトする
+ */
+$(function () {
+	$(window).on('scroll', function () {
+		$('a.scroll-track').each(function () {
+			var $window = $(window);
+			var $this = $(this);
+			var linkTo = $this.attr('href');
+			var $target = $(linkTo);
+			var offset = $target.data('offsettop') || 0;
+			var topLimit = $target.offset().top - offset;
+			var bottomLimit = $target.offset().top + $target.outerHeight() - offset;
+
+			if (topLimit <= $window.scrollTop() && $window.scrollTop() <= bottomLimit) {
+				$this.addClass('selected');
+			} else {
+				$this.removeClass('selected');
+			}
+		});
 	});
 });
