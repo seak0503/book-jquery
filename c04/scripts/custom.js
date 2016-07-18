@@ -135,8 +135,9 @@ $(function () {
 			var linkTo = $this.attr('href');
 			var $target = $(linkTo);
 			var offset = $target.data('offsettop') || 0;
-			var topLimit = $target.offset().top - offset;
-			var bottomLimit = $target.offset().top + $target.outerHeight() - offset;
+			var tolerance = 1;
+			var topLimit = $target.offset().top - offset - tolerance;
+			var bottomLimit = $target.offset().top + $target.outerHeight() - offset + tolerance;
 
 			if (topLimit <= $window.scrollTop() && $window.scrollTop() <= bottomLimit) {
 				$this.addClass('selected');
