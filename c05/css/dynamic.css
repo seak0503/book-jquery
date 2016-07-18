@@ -1,0 +1,36 @@
+/**
+ * 05-02　データからテーブルを生成する
+ */
+/* テーブル全体 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table th {
+  padding: 3px 10px;
+  border-bottom: #8ac2d0 5px solid;
+  border-left: #ddd 1px solid;
+  color: #8ac2d0;
+  text-align: left;
+  font-size: 0.8em;
+}
+table tr td {
+  padding: 15px 10px;
+  border-bottom: #ddd 1px solid;
+}
+table tr td:nth-child(n+4) {
+  padding: 15px 2px;
+}
+table tr td:nth-child(4) {
+  padding-left: 10px;
+}
+table tr td:last-child {
+  padding-right: 10px;
+}
+table tr td:nth-child(1) {
+  font-weight: bold;
+}
+table tr td:nth-child(1),
+table tr td:nth-child(3) {
+  white-space: nowrap;
+}
