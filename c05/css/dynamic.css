@@ -34,3 +34,49 @@ table tr td:nth-child(1),
 table tr td:nth-child(3) {
   white-space: nowrap;
 }
+
+/**
+ * RESPONSIVE: スマートフォン向けウィンドウ幅600px以下
+ */
+@media screen and (max-width:600px) {
+  /* テーブル全体 */
+  table {
+    display: block;
+  }
+  /* 見出し行 */
+  table th {
+    display: none;
+  }
+  /* データから生成する行 */
+  table tr {
+    display: block;
+    border-bottom: #ddd 1px solid;
+  }
+  table tr td {
+    display: block;
+  }
+  table tr td:first-child {
+    padding: 10px;
+    background: #ededed;
+  }
+  table tr td:nth-child(2),
+  table tr td:nth-child(3) {
+    padding: 10px 10px 0 30px;
+  }
+  table tr td:nth-child(n+4) {
+    display: inline-block;
+    border-bottom: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  table tr td:nth-child(4) {
+    padding-left: 30px;
+  }
+  table tr td:last-child {
+    padding-right: 10px;
+  }
+  tbody {
+    display: block;
+    width: 100%;
+  }
+}

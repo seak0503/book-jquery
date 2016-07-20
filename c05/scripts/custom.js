@@ -10,9 +10,9 @@ $(function () {
       var $name = $('<td></td>').text(shop.name);
       var $address = $('<td></td>').text(shop.address);
       var $tel = $('<td></td>').text(shop.tel);
-      var $solar = $('<td></td>').text(shop.solar);
-      var $kids = $('<td></td>').text(shop.kids);
-      var $natural = $('<td></td>').text(shop.natural);
+      var $solar = $('<td></td>').html(getImage('solar', shop.solar));
+      var $kids = $('<td></td>').html(getImage('kids', shop.kids));
+      var $natural = $('<td></td>').html(getImage('natural', shop.natural));
 
       $('<tr></tr>')
       .append($name)
@@ -23,6 +23,23 @@ $(function () {
       .append($natural)
       .appendTo('#shop');
     });
+  }
+
+  /**
+   * 05-03　データに合わせてアイコン画像を切り替える
+   */
+  //画像を返す
+  function getImage(type, number) {
+    var num = parseInt(number);
+    var suffix = '';
+    if (num) {
+      suffix = 'yes';
+    } else {
+      suffix = 'no';
+    }
+    var fileName = type + '-' + suffix + '.png';
+    var path = 'images/' + fileName;
+    return $('<img>').attr('src', path);
   }
 
   /**
