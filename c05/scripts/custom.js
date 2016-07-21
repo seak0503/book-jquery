@@ -55,4 +55,20 @@ $(function () {
   .fail(function () {
     alert('店舗データをダウンロードできませんでした。しばらく経ってからまたお試しください。')
   });
+
+  /**
+   * 05-04　データをフィルタする
+   */
+  //データをフィルタする
+  $('.filter-btn')
+    .on('click', 'li > a', function(event){
+      event.preventDefault();
+      var $this = $(this);
+
+      //ボタンのアピアランスを変更する
+      $this.parent('li').siblings()
+      .addClass('off')
+      .end()
+      .removeClass('off');
+    });
 });
