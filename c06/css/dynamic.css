@@ -1,0 +1,47 @@
+/**
+ * 06-01　カルーセル
+ */
+/* カルーセル */
+.wrapper-gallery {
+  padding: 30px 4.1666666%;
+}
+.gallery {
+  padding: 40px 4.5454545%;
+  background: #000;
+  border-radius: 5px;
+  line-height: 0;
+}
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 30px;
+}
+.thumbs {
+  width: 10000px;
+}
+.thumbs-list {
+  float: left;
+  font-size: 0;
+}
+.thumbs-list li {
+  display: inline-block;
+  margin: 0 1px;
+  border: 2px solid #000;
+  width: 76px;
+  height: 76px;
+}
+
+/**
+ * RESPONSIVE: スマートフォン向けウィンドウ幅600px以下
+ */
+@media screen and (max-width:600px) {
+  /* カルーセル */
+  .gallery {
+    padding: 0;
+    background: #fff;
+    border-radius: 0;
+  }
+  .thumbs-list li {
+    border: 2px solid #fff;
+  }
+}
