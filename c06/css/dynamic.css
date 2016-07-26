@@ -12,11 +12,14 @@
   line-height: 0;
 }
 .carousel {
+  position: relative;
   overflow: hidden;
   width: 100%;
   margin-top: 30px;
 }
 .thumbs {
+  position: relative;
+  left: 0;
   width: 10000px;
 }
 .thumbs-list {
@@ -29,6 +32,36 @@
   border: 2px solid #000;
   width: 76px;
   height: 76px;
+}
+
+/* ［＜］［＞］ボタン */
+.thumbs-nav a {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 80px;
+  background-image: url(../images/thumbnails-nav.png);
+}
+a.prev {
+  left: 0;
+  background-position: 0 80px;
+}
+a.prev:hover {
+  background-position: -40px 80px;
+}
+a.prev:active {
+  background-position: -80px 80px;
+}
+a.next {
+  right: 0;
+  background-position: 0 0;
+}
+a.next:hover {
+  background-position: -40px 0;
+}
+a.next:active {
+  background-position: -80px 0;
 }
 
 /**
