@@ -1,5 +1,6 @@
 /**
  * 06-03　カルーセルのプラグインを作成する
+ * 06-04　プリロードのプラグインを作成する
  */
 $.fn.extend({
   carousel:function(){
@@ -57,6 +58,13 @@ $.fn.extend({
         }
       });
     }
+  },
+  preloadImage:function () {
+    var $this = $(this);
+    if ($this.data('imgpath')) {
+      var path = $this.data('imgpath');
+      $('<img>').attr('src', path)
+    }
   }
 });
 
@@ -65,6 +73,9 @@ $.fn.extend({
  */
 $(function () {
   $('#carousel').carousel();
+  $('img[data-imgpath]').each(function () {
+    $(this).preloadImage();
+  });
 });
 
 /**
