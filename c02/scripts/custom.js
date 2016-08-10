@@ -62,6 +62,10 @@ $(function () {
  * 02-04　簡易的なイメージギャラリー
  */
 $(function () {
+  function preloadImage(path) {
+    $('<img>').attr('src', path);
+  }
+
   $('.thumbnails').on('click', 'li > a', function (event) {
     event.preventDefault();
     var $this = $(this);
@@ -75,5 +79,9 @@ $(function () {
     //イメージを差し替え
     var imagePath = $this.data('img');
     $('.gallery .mainimage img').attr('src', imagePath);
+  })
+  .children('li').each(function () {
+    var imagePath = $(this).children('a').data('img');
+    preloadImage(imgPath);
   });
 });
