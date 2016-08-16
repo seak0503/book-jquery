@@ -40,14 +40,16 @@
  */
 .wrapper-menubar {
 	height: 45px;
-	position: relative;
+	/* position: relative; */
 }
 .menubar {
-	position: absolute;
-	right: 4.1666666%; /* 4.1666666%（40px/960px） */
-	bottom: 0;
+	/* position: absolute;
+	right: 4.1666666%;
+	bottom: 0; */
 }
 .dropdown-menu {
+	float: left;
+	margin: 8px 16px 0 0;
 	width: 150px;
 }
 /* ボタンのスタイル */
