@@ -48,3 +48,72 @@ $(function () {
         }
     });
 });
+
+/**
+ * 03-03 CSSを操作するアニメーション
+ */
+$(function () {
+    $('.first')
+    .on('mouseenter', '.btn-action', function (event) {
+        event.preventDefault();
+        $(this).find('img')
+        .addClass('animate');
+    })
+    .on('mouseleave', '.btn-action', function (event) {
+        event.preventDefault();
+        $(this).find('img')
+        .removeClass('animate');
+    });
+});
+
+/**
+ * 03-04 連続アニメーション
+ */
+$(function () {
+    $('.second')
+    .on('mouseenter', '.btn-action', function (event) {
+        event.preventDefault();
+        $(this).find('img')
+        .animate({'opacity':0.5}, 300)
+        .animate({'opacity':1}, 500);
+    })
+    .on('mouseleave', '.btn-action', function (event) {
+        event.preventDefault();
+        $(this).find('img')
+        .animate({'opacity':1}, 300);
+    });
+});
+
+/**
+ * 03-05 animate()を使った高度なアニメーション
+ */
+$(function () {
+    var value = 0.5;
+
+    $('.third')
+    .on('mouseenter mouseleave', '.btn-action', function(event) {
+        event.preventDefault();
+        var opacityValue;
+        if (event.type == 'mouseenter') {
+            opacityValue = value;
+        } else {
+            opacityValue = 1;
+        }
+
+        $(this).find('img')
+        .animate(
+            {opacity:opacityValue},
+            {
+                duration: 500,
+                step:function (now, tween) {
+                    var rotate = 'rotate(' + (1 - now) * (360 / value) + 'deg)';
+                    $(this)
+                    .css({
+                        '-webkit-transform':rotate,
+                        'transform':rotate
+                    });
+                }
+            }
+        );
+    });
+});
