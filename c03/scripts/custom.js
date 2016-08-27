@@ -117,3 +117,84 @@ $(function () {
         );
     });
 });
+
+/**
+ * 03-06 スライドショー
+ */
+$(function () {
+    var intervalId;
+    setTimer();
+
+    function setTimer() {
+        intervalId = setInterval(autoClick, 5000);
+    }
+
+    function autoClick() {
+        $('.slide').children('a.next').click();
+    }
+
+    function changeImage($click) {
+        //console.log($click);
+        var $current = $click.siblings('.container').children('.current');
+        var $new;
+        var $findSelector = '';
+
+        if ($click.hasClass('next')) {
+            $new = $current.next();
+            findSelector = ':first-child';
+        } else {
+            $new = $current.prev();
+            findSelector = ':last-child';
+        }
+
+        if($new.length == 0) {
+            $new = $current.siblings(findSelector);
+        }
+        $current.removeClass('current');
+        $new.addClass('current');
+        setTimer();
+    }
+
+    $('.slide')
+    .on('click', '> a', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        clearInterval(intervalId);
+        changeImage($(this));
+    });
+});
+
+/**
+ * 03-07 Ajaxの基礎
+ */
+$(function () {
+    $('#fetch').on('click', function (event) {
+        event.preventDefault();
+        $this = $(this);
+        var ajaxUrl = $this.attr('href');
+
+        if (ajaxUrl != '#') {
+            $.get(ajaxUrl, function (data) {
+                //console.dir(data);
+                var $insertImg = $('<img>').attr('src', data.img);
+                var $insertText = $('<p></p>').text(data.article);
+                var $list = $('<li></li>')
+                    .prepend($insertImg)
+                    .append($insertText)
+                    .css({"opacity":0});
+
+                $('#ajax-list').append($list);
+                $list.animate({'opacity':1}, 400);
+                //リンク先を変更して読み込むデータファイルを変える
+                if (data.next == "") {
+                    $this
+                    .attr('href', '#')
+                    .addClass('disabled');
+                } else {
+                    $this
+                    .attr('href', data.next)
+                }
+            });
+        }
+    });
+});
