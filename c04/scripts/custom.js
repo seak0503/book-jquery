@@ -106,6 +106,7 @@ $(function () {
 
 /**
  * 04-04　スクロールしてページ内のリンク先まで移動する
+ * 04-05　スクロールしてページトップに戻る
  */
 $(function () {
   $('a.scroll-link').on('click', function (event) {
@@ -113,8 +114,43 @@ $(function () {
 
     var $this = $(this);
     var linkTo = $this.attr('href');
-    var $target = $(linkTo);
-    var pos = $target.offset().top;
+    var $target;
+    var offset = 0;
+    var pos = 0;
+    if (linkTo != '#top') {
+      $target = $(linkTo);
+      offset = $target.data('offsettop');
+      pos = $target.offset().top - offset;
+    }
     $('html,body').animate({scrollTop: pos}, 400);
   });
 });
+
+/**
+ * 04-06　スクロール位置に合わせてリンクをハイライトする
+ */
+$(function () {
+  $(window).on('scroll', function () {
+    $('a.scroll-track').each(function() {
+      console.log("デバッグ");
+      console.log(this);
+
+
+      var $window = $(window);
+      var $this = $(this);
+      var linkTo = $this.attr('href');
+      var $target = $(linkTo);
+      var offset = $target.data('offsettop') || 0;
+      var tolerance = 1;
+      var topLimit = $target.offset().top - offset - tolerance;
+      var bottomLimit = $target.offset().top + $target.outerHeight() - offset + tolerance;
+
+      if (topLimit <= $window.scrollTop() && $window.scrollTop() <= bottomLimit) {
+        $this.addClass('selected');
+      } else {
+        $this.removeClass('selected');
+      }
+    })
+  })
+})
+
