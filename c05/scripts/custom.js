@@ -5,6 +5,8 @@ $(function () {
    */
   //テーブルを表示する
   function renderTable(data) {
+    var $table = $('#shop');
+    $table.find('tr').remove(':not(:first-child)');
     $(data).each(function () {
       var shop = this;
 
@@ -25,7 +27,7 @@ $(function () {
       .append($solar)
       .append($kids)
       .append($natural)
-      .appendTo('#shop');
+      .appendTo($table);
     });
   }
 
@@ -59,4 +61,41 @@ $(function () {
   .fail(function () {
     alert('店舗データをダウンロードできませんでした。しばらく経ってからまたお試しください。');
   });
+
+  /**
+   * 05-04　データをフィルタする
+   */
+  //フィルタした結果の新たなデータを作成して返す
+  function filterData(data, filterName) {
+    var newData = [];
+    $(data).each(function () {
+      var currentData = this;
+      var num = parseInt(currentData[filterName]);
+      if (num == 1) {
+        newData.push(currentData);
+      }
+    });
+    return newData;
+  }
+
+  //データをフィルタする
+  $('.filter-btn')
+    .on('click', 'li > a', function (event) {
+      event.preventDefault();
+      var $this = $(this);
+
+      //ボタンのアピアランスを変更する
+      $this.parent('li').siblings()
+      .addClass('off')
+      .end()
+      .removeClass('off');
+
+      var idName = $this.parent().attr('id');
+      if (idName == 'all') {
+        renderTable(shopdata);
+      } else {
+        var newData = filterData(shopdata, idName);
+        renderTable(newData);
+      }
+    });
 });
