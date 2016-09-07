@@ -31,11 +31,27 @@ $(function () {
 
     //移動量を計算
     var move = direction * $carousel.width() + $imgContainer.position().left;
+    console.log("moveデバッグ");
+    console.log(move);
 
     $imgContainer.filter(':not(:animated)')
     .animate({left: move},
       {
-        duration:800
+        duration:800,
+        progress:function(){
+          var $this = $(this);
+          var $imgList = $this.find('.thumbs-list').first();
+
+          //移動量がthumbs-listの幅を上回ったら.thumbsのポジションをリセット
+          var resetPos;
+          //[<]がクリックされたとき
+          if (direction == 1 && 0 <= $this.position().left) {
+            resetPos = $this.position().left - $imgList.outerWidth();
+            console.log("resetPosデバッグ");
+            console.log(resetPos);
+            $this.css({"left": resetPos});
+          }
+        }
       });
    }
 });
